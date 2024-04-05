@@ -77,4 +77,65 @@ const fatorialResultado = fatorial(12);
 console.log(`O fatorial de 12 é:${fatorialResultado}`);
 
 // Excercicio 7
-///
+// valor total da compra
+function totalCompra(valor1, valor2, valor3) {
+  return valor1 + valor2 + valor3;
+}
+const totalCompraResultado = totalCompra(12, 5, 23);
+console.log(`O valor total da compra é:${totalCompraResultado}`);
+
+// Excercicio 8
+// Multa por atraso de R$ 0,50 por dia de atraso
+
+function multaPorAtraso(multa, atraso) {
+  return (multa *= atraso);
+}
+const multaPorAtrasoResultado = multaPorAtraso(0.5, 7);
+console.log(`A multa por atraso é:${multaPorAtrasoResultado}`);
+
+// Exercicio 9
+// Pontos de vida(HP) de um personagem após 3 ataques, onde cada um vale 20 pontos de vida e o total é 100.
+
+function pontosDeVida(ataque1, ataque2, ataque3) {
+  return 100 - ataque1 - ataque2 - ataque3;
+}
+const pontosDeVidaResultado = pontosDeVida(20, 20, 20);
+console.log(`Os pontos de vida do personagem são:${pontosDeVidaResultado}`);
+
+// Exercicio 10
+// Contar o número de letras maiúsculas da string abaixo: "LoReM IpSuM Is sImPlY DuMmY TeXt oF ThE PrInTiNg aNd tYpEsEtTiNg iNdUsTrY"
+
+function contarLetrasMaiusculas(texto) {
+  return texto.toUpperCase().match(/[A-Z]/g).length;
+}
+
+const contarLetrasMaiusculasResultado = contarLetrasMaiusculas(
+  "LoReM IpSuM Is sImPlY DuMmY TeXt oF ThE PrInTiNg aNd tYpEsEtTiNg iNdUsTrY"
+);
+console.log(
+  `A quantidade de letras maiúsculas é:${contarLetrasMaiusculasResultado}`
+);
+
+// Exercicio 11
+// Crie uma lógica para calcular a idade de uma pessoa. Essa lógica deverá receber um valor de ano de nascimento no formato “yyyy-MM-dd” e deverá retornar o número da idade da pessoa como resultado.
+
+function calcularIdade(anoNascimento, mesNascimento, diaNascimento) {
+  const dataNascimento = new Date(
+    anoNascimento,
+    mesNascimento - 1,
+    diaNascimento
+  );
+  const dataAtual = new Date();
+  const idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
+  if (
+    dataAtual.getMonth() < dataNascimento.getMonth() ||
+    (dataAtual.getMonth() === dataNascimento.getMonth() &&
+      data_atual.getDate() < dataNascimento.getDate())
+  ) {
+    return idade - 1;
+  }
+  return idade;
+}
+
+const calcularIdadeResultado = calcularIdade(2005, 9, 21);
+console.log(`A idade da pessoa é:${calcularIdadeResultado}`);
